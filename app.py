@@ -1,53 +1,35 @@
-import streamlit as st
 import pandas as pd
 
-# Page title
-st.set_page_config(page_title="CET Cutoff Analyzer", layout="centered")
+# Years
+years = [2025, 2024, 2023]
 
-st.title("🎓 CET Cutoff Analyzer (3 Years)")
-
-# Load data
-df = pd.read_csv("data.csv")
-
-# Sidebar filters
-st.sidebar.header("Filter Options")
-
-college = st.sidebar.selectbox(
-    "Select College",
-    sorted(df["College"].unique())
-)
-
-course = st.sidebar.selectbox(
-    "Select Branch",
-    sorted(df["Course"].unique())
-)
-
-# Filter data
-filtered = df[
-    (df["College"] == college) &
-    (df["Course"] == course)
+# 40 Colleges
+colleges = [
+    "RVCE","BMSCE","MSRIT","DSCE","PESU","BIT","BNMIT","NMIT","CMRIT","SJBIT",
+    "AIT","RVU","REVA","CMRU","NHCE","JSS","SDM","KLE","PDA","BIET",
+    "GAT","EWIT","RNSIT","VVCE","SIT","TCE","AMC","JIT","SJB","SEA",
+    "MVJ","KSIT","BGSIT","SMVIT","NIE","MITM","GEC","PESCE","ATME","DBIT"
 ]
 
-# Sort and get last 3 years
-result = filtered.sort_values(by="Year", ascending=False).head(3)
+# Branches
+branches = ["CSE","ECE"]
 
-# Display
-st.subheader(f"📊 Cutoff for {college} - {course}")
-st.dataframe(result, use_container_width=True)
+data = []
 
-# Chart
-st.subheader("📈 Cutoff Trend")
-chart_data = result.sort_values("Year")
-st.line_chart(chart_data.set_index("Year")["Cutoff"])
+# Generate data
+for i, college in enumerate(colleges):
+    for j, branch in enumerate(branches):
+        base = 1000 + (i * 500) + (j * 2000)
 
-# Download option
-st.download_button(
-    "📥 Download CSV",
-    result.to_csv(index=False),
-    "cutoff_result.csv",
-    "text/csv"
-)
+        for k, year in enumerate(years):
+            cutoff = base + (k * 300)
 
-# Optional message
-if result.empty:
-    st.warning("No data found for selected filters")
+            data.append([year, college, branch, cutoff])
+
+# Create DataFrame
+df = pd.DataFrame(data, columns=["Year","College","Course","Cutoff"])
+
+# Save CSV
+df.to_csv("data.csv", index=False)
+
+print("✅ data.csv generated successfully!")
