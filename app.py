@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 
-# Page title
+# Page config
 st.set_page_config(page_title="CET Cutoff Analyzer", layout="centered")
 
-st.title("🎓 CET Cutoff Analyzer (3 Years)")
+st.title("🎓 CET Cutoff Analyzer (KCET Categories)")
 
 # Load data
 df = pd.read_csv("data.csv")
@@ -22,17 +22,23 @@ course = st.sidebar.selectbox(
     sorted(df["Course"].unique())
 )
 
+category = st.sidebar.selectbox(
+    "Select Category",
+    sorted(df["Category"].unique())
+)
+
 # Filter data
 filtered = df[
     (df["College"] == college) &
-    (df["Course"] == course)
+    (df["Course"] == course) &
+    (df["Category"] == category)
 ]
 
 # Sort and get last 3 years
 result = filtered.sort_values(by="Year", ascending=False).head(3)
 
-# Display
-st.subheader(f"📊 Cutoff for {college} - {course}")
+# Display table
+st.subheader(f"📊 Cutoff for {college} - {course} ({category})")
 st.dataframe(result, use_container_width=True)
 
 # Chart
@@ -48,6 +54,6 @@ st.download_button(
     "text/csv"
 )
 
-# Optional message
+# Empty check
 if result.empty:
     st.warning("No data found for selected filters")
