@@ -4,7 +4,7 @@ import pandas as pd
 # Page config
 st.set_page_config(page_title="CET Cutoff Analyzer", layout="centered")
 
-st.title("🎓 CET Cutoff Analyzer (KCET Categories)")
+st.title("🎓 CET Cutoff Analyzer (3 Years)")
 
 # Load data
 df = pd.read_csv("data.csv")
@@ -37,7 +37,7 @@ filtered = df[
 # Sort and get last 3 years
 result = filtered.sort_values(by="Year", ascending=False).head(3)
 
-# Display table
+# Display
 st.subheader(f"📊 Cutoff for {college} - {course} ({category})")
 st.dataframe(result, use_container_width=True)
 
@@ -54,6 +54,6 @@ st.download_button(
     "text/csv"
 )
 
-# Empty check
+# Optional message
 if result.empty:
     st.warning("No data found for selected filters")
