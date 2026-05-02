@@ -1,24 +1,19 @@
 Year,College,Course,Category,Cutoff
-
-# ================= RVCE =================
 2025,RVCE,ECE,General,2500
 2024,RVCE,ECE,General,2800
 2023,RVCE,ECE,General,3200
-
 2025,RVCE,ECE,EWS,2700
 2024,RVCE,ECE,EWS,3000
 2023,RVCE,ECE,EWS,3400
-
 2025,RVCE,ECE,2A,3300
 2024,RVCE,ECE,2A,3600
 2023,RVCE,ECE,2A,4000
-
 2025,RVCE,ECE,SC,6000
 2024,RVCE,ECE,SC,6300
 2023,RVCE,ECE,SC,6700
 
 
-# ================= BMSCE =================
+
 2025,BMSCE,ECE,General,3500
 2024,BMSCE,ECE,General,3900
 2023,BMSCE,ECE,General,4200
@@ -36,7 +31,6 @@ Year,College,Course,Category,Cutoff
 2023,BMSCE,ECE,SC,7800
 
 
-# ================= MSRIT =================
 2025,MSRIT,ECE,General,3000
 2024,MSRIT,ECE,General,3400
 2023,MSRIT,ECE,General,3700
@@ -54,7 +48,7 @@ Year,College,Course,Category,Cutoff
 2023,MSRIT,ECE,SC,7200
 
 
-# ================= DSCE =================
+
 2025,DSCE,ECE,General,6000
 2024,DSCE,ECE,General,6500
 2023,DSCE,ECE,General,7000
@@ -72,7 +66,7 @@ Year,College,Course,Category,Cutoff
 2023,DSCE,ECE,SC,10500
 
 
-# ================= PESU =================
+
 2025,PESU,ECE,General,2200
 2024,PESU,ECE,General,2600
 2023,PESU,ECE,General,3000
@@ -90,7 +84,7 @@ Year,College,Course,Category,Cutoff
 2023,PESU,ECE,SC,6600
 
 
-# ================= BIT =================
+
 2025,BIT,ECE,General,5000
 2024,BIT,ECE,General,5400
 2023,BIT,ECE,General,5800
@@ -108,7 +102,7 @@ Year,College,Course,Category,Cutoff
 2023,BIT,ECE,SC,9300
 
 
-# ================= BNMIT =================
+
 2025,BNMIT,ECE,General,9000
 2024,BNMIT,ECE,General,9500
 2023,BNMIT,ECE,General,10000
@@ -126,7 +120,7 @@ Year,College,Course,Category,Cutoff
 2023,BNMIT,ECE,SC,13500
 
 
-# ================= NMIT =================
+
 2025,NMIT,ECE,General,11000
 2024,NMIT,ECE,General,11500
 2023,NMIT,ECE,General,12000
@@ -144,7 +138,7 @@ Year,College,Course,Category,Cutoff
 2023,NMIT,ECE,SC,15000
 
 
-# ================= CMRIT =================
+
 2025,CMRIT,ECE,General,12000
 2024,CMRIT,ECE,General,12500
 2023,CMRIT,ECE,General,13000
@@ -162,7 +156,6 @@ Year,College,Course,Category,Cutoff
 2023,CMRIT,ECE,SC,16000
 
 
-# ================= SJBIT =================
 2025,SJBIT,ECE,General,14000
 2024,SJBIT,ECE,General,14500
 2023,SJBIT,ECE,General,15000
